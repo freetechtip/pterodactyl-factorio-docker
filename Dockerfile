@@ -2,9 +2,8 @@ FROM ghcr.io/pterodactyl/yolks:alpine
 
 MAINTAINER Jackson Holle, <github@jacksonholle.com>
 USER root
-RUN \
-    apk add --no-cache --update curl bash coreutils shadow su-exec tzdata \
-    && adduser --disabled-password --home /home/container container
+RUN apk add --no-cache --update curl bash coreutils shadow su-exec tzdata
+RUN adduser --disabled-password --home /home/container container
 
 USER container
 ENV USER=container HOME=/home/container
